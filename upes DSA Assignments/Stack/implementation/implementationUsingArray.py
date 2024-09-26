@@ -1,16 +1,20 @@
 
 class StackUsingArray:
     
+    #created a empty stack
     def __init__(self,size) -> None:
         self.stack = []
         self.size = size
-        
+     
+     # check if stack is full or not   
     def isFull(self):
         return self.size == len(self.stack) 
     
+    # check if stack is empty or not
     def isEmpty(self):
         return len(self.stack) == 0   
     
+    # push an element into stack
     def push(self, item):
         if self.isFull():
             print("Stack is full, cannot insert new element")
@@ -19,7 +23,7 @@ class StackUsingArray:
             self.stack.append(item)
             print(f"pushed {item} to the stack")
             
-    
+    # pop an element from a stack
     def pop(self):
         if self.isEmpty():
             print("Stack is empty, cannot delete an element")
@@ -29,7 +33,8 @@ class StackUsingArray:
             self.stack.pop();
             print(f"{self.stack[-1]} is popped from stack")
             self.size -= 1                
-            
+     
+     # displays the top element of a stack       
     def peek(self):
         
         if self.isEmpty():
@@ -39,10 +44,12 @@ class StackUsingArray:
         else:
             print("Top element is: ",self.stack[-1])
             return
-        
+     
+     # displays the length of the stack   
     def len(self):
         print("length of stack is: ", self.size)    
     
+    # prints all the elements present in a stack
     def display(self):
          if self.isEmpty():
              print("stack is empty")
